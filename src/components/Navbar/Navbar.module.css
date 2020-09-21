@@ -6,6 +6,10 @@
   right: 0;
 }
 
+.black {
+  background-color: #000000;
+}
+
 .navbar {
   max-width: 120rem;
   height: 100%;

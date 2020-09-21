@@ -1,0 +1,32 @@
+.movieDetails {
+  max-width: 104rem;
+  margin: 15rem auto 0;
+  height: 55rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movieDetails img {
+  border-radius: 5px;
+}
+
+.details {
+  width: 60rem;
+}
+
+.details h1 {
+  font-size: 4.8rem;
+}
+
+.details p {
+  font-size: 1.6rem;
+}
+
+.content {
+  margin-top: 3rem;
+}
+
+.content p:last-child {
+  margin-top: 1rem;
+}

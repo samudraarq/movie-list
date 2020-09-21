@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = ({ bg }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${bg === "black" && styles.black}`}>
       <ul className={styles.navbar}>
         <li>
           <a href="/">Home</a>
