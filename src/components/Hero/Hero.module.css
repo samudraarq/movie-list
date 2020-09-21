@@ -1,0 +1,62 @@
+.hero {
+  height: 65rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+  color: #fff;
+  padding: 0 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 4.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 2.5rem;
+}
+
+.hero form {
+  margin-top: 7.5rem;
+}
+
+.hero form input {
+  height: 5rem;
+  width: 35rem;
+  border: none;
+  border-radius: 5px;
+  padding: 2rem;
+  outline: none;
+}
+
+.hero form input::placeholder {
+  color: #e5e5e5;
+  letter-spacing: 0.1rem;
+}
+
+.hero form button {
+  margin-left: 1.5rem;
+  height: 5rem;
+  width: 12rem;
+  background-color: #eb6b63;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.hero form button:hover {
+  background-color: #da5950;
+}
