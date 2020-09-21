@@ -1,0 +1,51 @@
+.container {
+  height: 60rem;
+  max-width: 120rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.movieList {
+  width: 100%;
+}
+
+.movieList h2 {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.movies {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.movie {
+  width: 15rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.movie:hover {
+  transform: scale(1.1);
+}
+
+.movie img {
+  height: 22.5rem;
+  width: 15rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.year {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
