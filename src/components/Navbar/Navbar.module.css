@@ -1,0 +1,33 @@
+.container {
+  height: 15rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  max-width: 114rem;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar li {
+  list-style: none;
+  margin-left: 3rem;
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.navbar li a:hover {
+  color: #eb6b63;
+}
