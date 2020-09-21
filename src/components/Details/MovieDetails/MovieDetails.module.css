@@ -8,6 +8,9 @@
 }
 
 .movieDetails img {
+  height: 45rem;
+  width: 30rem;
+  object-fit: cover;
   border-radius: 5px;
 }
 

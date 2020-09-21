@@ -1,28 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import styles from "./MovieDetails.module.css";
 
 const MovieDetails = () => {
+  const [movie, setMovie] = useState({});
+  const [movieCasts, setMovieCasts] = useState([]);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=b9d43aa594df2e831c5361253949ea0e`
+      )
+      .then((res) => {
+        const newMovie = res.data;
+        newMovie.posterImg =
+          "https://image.tmdb.org/t/p/w500/" + newMovie.poster_path;
+        setMovie(newMovie);
+        return axios.get(
+          `https://api.themoviedb.org/3/movie/${id}/credits?api_key=b9d43aa594df2e831c5361253949ea0e`
+        );
+      })
+      .then((res) => {
+        setMovieCasts(res.data.cast.slice(0, 3));
+      });
+  }, [id]);
+
+  const casts = movieCasts.map((cast) => cast.character).join(", ");
+
   return (
     <div className={styles.movieDetails}>
-      <img src="https://picsum.photos/300/450" alt="movie poster" />
+      <img src={movie.posterImg} alt="movie poster" />
       <div className={styles.details}>
-        <h1>The Avengers</h1>
+        <h1>{movie.title}</h1>
         <div className={styles.content}>
-          <p>Rating : 79</p>
+          <p>Rating : {movie.vote_average}</p>
         </div>
         <div className={styles.content}>
           <p>Synopsis :</p>
-          <p>
-            When an unexpected enemy emerges and threatens global safety and
-            security, Nick Fury, director of the international peacekeeping
-            agency known as S.H.I.E.L.D., finds himself in need of a team to
-            pull the world back from the brink of disaster. Spanning the globe,
-            a daring recruitment effort begins!
-          </p>
+          <p>{movie.overview}</p>
         </div>
         <div className={styles.content}>
           <p>Casts :</p>
-          <p>Robert Downey Jr., Chris Evans, Mark Ruffalo</p>
+          <p>{movieCasts && casts}</p>
         </div>
       </div>
     </div>
