@@ -10,6 +10,10 @@ const MovieDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=b9d43aa594df2e831c5361253949ea0e`
@@ -28,7 +32,7 @@ const MovieDetails = () => {
       });
   }, [id]);
 
-  const casts = movieCasts.map((cast) => cast.character).join(", ");
+  const casts = movieCasts.map((cast) => cast.name).join(", ");
 
   return (
     <div className={styles.movieDetails}>
