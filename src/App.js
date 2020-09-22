@@ -4,18 +4,20 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main.js/Main";
 import Details from "./components/Details/Details";
-import Navbar from "./components/Navbar/Navbar";
+import Search from "./components/Search/Search";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
         <Route exact path="/">
           <Main />
         </Route>
         <Route path="/movie/:id">
           <Details />
+        </Route>
+        <Route path="/search/:search">
+          <Search />
         </Route>
       </Switch>
       <Footer />
