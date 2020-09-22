@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
-import SearchedMovies from "./SearchedMovies/SearchedMovies";
+import Navbar from "../components/Navbar/Navbar";
+import SearchedMovies from "../components/SearchedMovies/SearchedMovies";
 
 const Search = () => {
   return (

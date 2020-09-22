@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-import Main from "./components/Main.js/Main";
-import Details from "./components/Details/Details";
-import Search from "./components/Search/Search";
+import Main from "./pages/Main";
+import Details from "./pages/Details";
+import Search from "./pages/Search";
 
 function App() {
   return (

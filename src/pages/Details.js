@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import MovieList from "../Main.js/MovieList/MovieList";
-import Navbar from "../Navbar/Navbar";
-import MovieDetails from "./MovieDetails/MovieDetails";
+import MovieList from "../components/MovieList/MovieList";
+import Navbar from "../components/Navbar/Navbar";
+import MovieDetails from "../components/MovieDetails/MovieDetails";
 
 const Details = () => {
   const { id } = useParams();
