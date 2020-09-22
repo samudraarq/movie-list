@@ -29,7 +29,11 @@ const MovieList = ({ query, title }) => {
       style={{ textDecoration: "none" }}
     >
       <div className={styles.movie}>
-        <img src={movie.posterImg} alt="movie poster" />
+        {movie.poster_path !== null ? (
+          <img src={movie.posterImg} alt="movie poster" />
+        ) : (
+          <p className={styles.notfound}>No Poster</p>
+        )}
         <p className={styles.title}>{movie.title}</p>
         <p className={styles.year}>{movie.release_date.slice(0, 4)}</p>
       </div>
