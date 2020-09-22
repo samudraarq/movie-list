@@ -11,7 +11,9 @@ const ChangePage = ({ nextPage, prevPage, page, maxPage }) => {
       >
         Prev
       </button>
-      <p>{page}</p>
+      <p>
+        {page} / {maxPage}
+      </p>
       <button
         onClick={nextPage}
         className={styles.btn}
