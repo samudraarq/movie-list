@@ -84,6 +84,7 @@ const SearchedMovies = () => {
         nextPage={nextPageHandler}
         prevPage={prevPageHandler}
         page={page}
+        maxPage={maxPage}
       />
     </>
   );

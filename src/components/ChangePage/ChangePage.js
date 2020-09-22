@@ -1,12 +1,24 @@
 import React from "react";
 import styles from "./ChangePage.module.css";
 
-const ChangePage = ({ nextPage, prevPage, page }) => {
+const ChangePage = ({ nextPage, prevPage, page, maxPage }) => {
   return (
     <div className={styles.container}>
-      <button onClick={prevPage}>prev</button>
+      <button
+        onClick={prevPage}
+        className={styles.btn}
+        disabled={page <= 1 ? true : false}
+      >
+        Prev
+      </button>
       <p>{page}</p>
-      <button onClick={nextPage}>next</button>
+      <button
+        onClick={nextPage}
+        className={styles.btn}
+        disabled={page >= maxPage ? true : false}
+      >
+        Next
+      </button>
     </div>
   );
 };
