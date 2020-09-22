@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Main from "./pages/Main";
 import Details from "./pages/Details";
 import Search from "./pages/Search";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/search/:search">
           <Search />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
       <Footer />

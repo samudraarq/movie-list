@@ -1,0 +1,8 @@
+.container {
+  padding: 5rem 0;
+  max-width: 120rem;
+  margin: 15rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

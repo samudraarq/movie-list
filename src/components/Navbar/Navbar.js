@@ -10,7 +10,7 @@ const Navbar = ({ bg }) => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
       </ul>
     </div>
