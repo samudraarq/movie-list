@@ -8,7 +8,7 @@ const Main = () => {
     <div>
       <Navbar bg="transparent" />
       <Hero />
-      <MovieList />
+      <MovieList query="movie/popular" title="Movie List" />
     </div>
   );
 };

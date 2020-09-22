@@ -23,10 +23,11 @@ const MovieDetails = () => {
         newMovie.posterImg =
           "https://image.tmdb.org/t/p/w500/" + newMovie.poster_path;
         setMovie(newMovie);
-        return axios.get(
-          `https://api.themoviedb.org/3/movie/${id}/credits?api_key=b9d43aa594df2e831c5361253949ea0e`
-        );
-      })
+      });
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=b9d43aa594df2e831c5361253949ea0e`
+      )
       .then((res) => {
         setMovieCasts(res.data.cast.slice(0, 3));
       });

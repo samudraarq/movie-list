@@ -3,25 +3,24 @@ import axios from "axios";
 import styles from "./MovieList.module.css";
 import { Link } from "react-router-dom";
 
-const MovieList = () => {
+const MovieList = ({ query, title }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    const getMovies = async () => {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/${query}?api_key=b9d43aa594df2e831c5361253949ea0e`
+      );
+      const movieList = await res.data.results.slice(0, 7);
+      movieList.map(
+        (movie) =>
+          (movie.posterImg =
+            "https://image.tmdb.org/t/p/w500/" + movie.poster_path)
+      );
+      setMovies(movieList);
+    };
     getMovies();
-  }, []);
-
-  const getMovies = async () => {
-    const res = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=b9d43aa594df2e831c5361253949ea0e`
-    );
-    const movieList = await res.data.results.slice(0, 7);
-    movieList.map(
-      (movie) =>
-        (movie.posterImg =
-          "https://image.tmdb.org/t/p/w500/" + movie.poster_path)
-    );
-    setMovies(movieList);
-  };
+  }, [query]);
 
   const renderMovies = movies.map((movie) => (
     <Link
@@ -37,11 +36,15 @@ const MovieList = () => {
     </Link>
   ));
 
+  const noMovies = <h1>No Movies Found</h1>;
+
   return (
     <div className={styles.container}>
       <div className={styles.movieList}>
-        <h2>Movie List :</h2>
-        <div className={styles.movies}>{renderMovies}</div>
+        <h2>{title} :</h2>
+        <div className={styles.movies}>
+          {renderMovies.length ? renderMovies : noMovies}
+        </div>
       </div>
     </div>
   );
