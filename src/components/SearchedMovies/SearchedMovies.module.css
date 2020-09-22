@@ -1,5 +1,5 @@
 .container {
-  height: 60rem;
+  padding: 5rem 0;
   max-width: 120rem;
   margin: 15rem auto 0;
   display: flex;
@@ -18,13 +18,14 @@
 }
 
 .movies {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   margin-top: 5rem;
 }
 
 .movie {
   width: 15rem;
+  height: 30rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }

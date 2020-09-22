@@ -37,11 +37,15 @@ const MovieDetails = () => {
 
   return (
     <div className={styles.movieDetails}>
-      <img src={movie.posterImg} alt="movie poster" />
+      {movie.poster_path !== null ? (
+        <img src={movie.posterImg} alt="movie poster" />
+      ) : (
+        <p>No Poster</p>
+      )}
       <div className={styles.details}>
         <h1>{movie.title}</h1>
         <div className={styles.content}>
-          <p>Rating : {movie.vote_average}</p>
+          <p>Score : {movie.vote_average}</p>
         </div>
         <div className={styles.content}>
           <p>Synopsis :</p>

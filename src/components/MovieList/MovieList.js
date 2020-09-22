@@ -11,7 +11,7 @@ const MovieList = ({ query, title }) => {
       const res = await axios.get(
         `https://api.themoviedb.org/3/${query}?api_key=b9d43aa594df2e831c5361253949ea0e`
       );
-      const movieList = await res.data.results.slice(0, 7);
+      const movieList = await res.data.results.slice(0, 10);
       movieList.map(
         (movie) =>
           (movie.posterImg =

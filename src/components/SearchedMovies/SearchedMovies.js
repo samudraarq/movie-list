@@ -17,7 +17,7 @@ const SearchedMovies = () => {
       const res = await axios.get(
         `https://api.themoviedb.org/3/search/movie/?api_key=b9d43aa594df2e831c5361253949ea0e&language=en-US&query=${search}&page=1&include_adult=false`
       );
-      const movieList = await res.data.results.slice(0, 7);
+      const movieList = await res.data.results;
       movieList.map(
         (movie) =>
           (movie.posterImg =
@@ -35,9 +35,13 @@ const SearchedMovies = () => {
       style={{ textDecoration: "none" }}
     >
       <div className={styles.movie}>
-        <img src={movie.posterImg} alt="movie poster" />
+        {movie.poster_path !== null ? (
+          <img src={movie.posterImg} alt="movie poster" />
+        ) : (
+          <p>No Poster</p>
+        )}
         <p className={styles.title}>{movie.title}</p>
-        <p className={styles.year}>{movie.release_date.slice(0, 4)}</p>
+        <p className={styles.year}>{movie.release_date?.slice(0, 4)}</p>
       </div>
     </Link>
   ));
@@ -47,7 +51,7 @@ const SearchedMovies = () => {
   return (
     <div className={styles.container}>
       <div className={styles.movieList}>
-        <h2>Searched Movies :</h2>
+        <h2>Searched Movies : {search}</h2>
         <div className={styles.movies}>
           {renderMovies.length ? renderMovies : noMovies}
         </div>
