@@ -20,7 +20,7 @@ const Hero = () => {
     <div className={styles.hero}>
       <div className={styles.container}>
         <h1>Your Movie List</h1>
-        <h2>It's Among Us</h2>
+        <h2>Bond. James Bond.</h2>
         <form onSubmit={submitHandler}>
           <input
             type="text"

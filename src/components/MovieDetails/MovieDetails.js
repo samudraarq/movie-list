@@ -16,7 +16,7 @@ const MovieDetails = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=b9d43aa594df2e831c5361253949ea0e`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
       )
       .then((res) => {
         const newMovie = res.data;
@@ -26,7 +26,7 @@ const MovieDetails = () => {
       });
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=b9d43aa594df2e831c5361253949ea0e`
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
       )
       .then((res) => {
         setMovieCasts(res.data.cast.slice(0, 3));

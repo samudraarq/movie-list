@@ -9,7 +9,7 @@ const MovieList = ({ query, title }) => {
   useEffect(() => {
     const getMovies = async () => {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/${query}?api_key=b9d43aa594df2e831c5361253949ea0e`
+        `https://api.themoviedb.org/3/${query}?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
       );
       const movieList = await res.data.results.slice(0, 10);
       movieList.map(
