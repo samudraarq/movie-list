@@ -11,9 +11,6 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Main />
-        </Route>
         <Route path="/movie/:id">
           <Details />
         </Route>
@@ -22,6 +19,9 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route exact path="/">
+          <Main />
         </Route>
       </Switch>
       <Footer />
