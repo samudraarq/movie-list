@@ -18,7 +18,7 @@ const SearchedMovies = () => {
   useEffect(() => {
     const getMovies = async () => {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/search/movie/?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&query=${search}&page=${page}&include_adult=false`
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&query=${search}&page=${page}&include_adult=false`
       );
       const movieList = await res.data.results;
       const getMaxPage = await res.data.total_pages;
